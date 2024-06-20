@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Send Newsletter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Send Newsletter</h1>
+    <form id="admin-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="body">Body:</label>
+        <textarea id="body" name="body" required></textarea>
+        <br>
+        <button type="submit">Send</button>
+    </form>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('admin-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(event.target);
+            fetch('/send-newsletters', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(() => {
+                document.getElementById('response').innerText = 'Emails are being sent!';
+                setTimeout(() => {
+                    document.getElementById('response').innerText = '';
+                }, 3000);
+                document.getElementById('admin-form').reset();
+            })
+            .catch(error => {
+                document.getElementById('response').innerText = 'Error sending emails.';
+                setTimeout(() => {
+                    document.getElementById('response').innerText = '';
+                }, 3000);
+                console.error('Error:', error);
+            });
+        });
+    </script>  
+</body>
+</html>
