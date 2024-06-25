@@ -30,7 +30,7 @@ sudo systemctl status rabbitmq-server
 mongosh 
 ```
 
-- Populate the following fields in the `config.py` with your Gmail username, app password and email address.
+- Populate the following fields - `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_DEFAULT_SENDER` in the `config.py` with your Gmail username, app password and email address.
 
 - Run the flask application using the following command:
 
