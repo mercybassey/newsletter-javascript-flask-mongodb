@@ -1,5 +1,5 @@
 # Newsletter Platform with JavaScript, Flask, and MongoDB
-This repository contains the code for the tutorial [Building a Newsletter Platform with JavaScript, Flask, and MongoDB](). This project showcases how to build a newsletter subscription platform using Flask for the backend, MongoDB for data storage, and JavaScript for dynamic user interactions.
+This repository contains the code for the tutorial [Building a Newsletter Platform with JavaScript, Flask, and MongoDB](https://www.mongodb.com/developer/products/mongodb/python-flask-celery-newsletter/). This project showcases how to build a newsletter subscription platform using Flask for the backend, MongoDB for data storage, and JavaScript for dynamic user interactions.
 
 ![Newsletter Landing Page](https://imgur.com/LPlS3XD.png)
 
